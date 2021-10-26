@@ -1,0 +1,43 @@
+.card{
+    background-color: #1C7CCC;
+    border-radius: 5px;
+    padding: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 5px 2px #000;
+    transform-style: preserve-3d;
+    transition-duration: 1s;
+    user-select: none;
+    transform: perspective(1000px);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 110px 80px;
+}
+
+.card:not(.flip):hover{
+    box-shadow: 0 0 5px 2px #fff;
+    transition-duration: 300ms;
+}
+
+.card.flip{
+    transform: rotateY(180deg);
+    cursor: default;
+}
+
+
+.card:not(.flip):active{
+    transform: scale(.9);
+    transition: transform .2s;
+}
+
+
+.front-face,
+.back-face{
+    backface-visibility: hidden;
+    position: absolute;
+}
+
+.front-face{
+    transform: rotateY(180deg);
+}
